@@ -85,6 +85,25 @@ class TreeNode
     result
   end
 
+  def self.level_order_bottom(root)
+    return if root.nil?
+
+    queue = [root]
+    result = [[root.val]]
+    until queue.empty?
+      temp = []
+      until queue.empty?
+        node = queue.pop
+        temp << node.left if node.left
+        temp << node.right if node.right
+      end
+      result.unshift(temp.map(&:val)) if temp
+      queue = temp
+    end
+    result.shift
+    result
+  end
+
   def self.traversal(root)
     queue = [root]
     result = []

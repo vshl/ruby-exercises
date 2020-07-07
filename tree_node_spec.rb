@@ -50,6 +50,12 @@ describe TreeNode do
     end
   end
 
+  describe '#level_order_bottom' do
+    it 'traverses a tree from the bottom' do
+      expect(TreeNode.level_order_bottom(root)).to match_array([[15, 7], [9, 20], [3]])
+    end
+  end
+
   describe '#sorted_array_to_bst' do
     it 'converts array to bst' do
       nums = [-10, -3, 0, 5, 9]
