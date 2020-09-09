@@ -44,5 +44,8 @@ describe '#sort_array' do
     arr = [5, 2, 3, 1]
     expected = [1, 2, 3, 5]
     assert_equal sort_array(arr), expected
+    arr = [2]
+    expected = [2]
+    assert_equal sort_array(arr), expected
   end
 end
