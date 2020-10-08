@@ -3,7 +3,7 @@
 def reverse_string(string)
   return string if string.length <= 1
 
-  reverse_string(string[1..-1]) + string[0]
+  string[-1] + reverse_string(string[1...-1]) + string[0]
 end
 
 def reverse_string2(string)
