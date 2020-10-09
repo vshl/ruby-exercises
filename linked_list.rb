@@ -39,7 +39,7 @@ class ListNode
   def self.palindrome?(head)
     slow = head
     fast = head
-    while fast && fast&.next
+    while fast && fast.next
       slow = slow.next
       fast = fast.next.next
     end
@@ -60,5 +60,24 @@ class ListNode
       prev = prev.next
     end
     true
+  end
+
+  def self.rotate_list(head, k)
+    return head if head.nil?
+
+    dummy = head
+    n = 1
+    until dummy.next.nil?
+      dummy = dummy.next
+      n += 1
+    end
+    dummy.next = head
+    (n - k % n).times do
+      dummy = dummy.next
+    end
+    prev = dummy
+    dummy = prev.next
+    prev.next = nil
+    traverse(dummy)
   end
 end
