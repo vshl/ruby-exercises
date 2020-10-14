@@ -17,7 +17,7 @@ def buddy_strings(a, b)
       pairs << [c, d] if c != d
       return false if pairs.size >= 3
     end
-    true if pairs.size == 2 && pairs[0] == pairs.reverse[1]
+    pairs.size == 2 && pairs[0] == pairs[1].reverse
   end
 end
 
@@ -41,6 +41,7 @@ describe '#buddy_strings' do
     it 'they are not buddy strings' do
       expect(buddy_strings('abcd', 'dabc')).to be false
       expect(buddy_strings('aabcd', 'aacdb')).to be false
+      expect(buddy_strings('aaaadd', 'aaaacc')).to be false
     end
   end
 
