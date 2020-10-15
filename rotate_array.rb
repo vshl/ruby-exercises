@@ -2,8 +2,9 @@
 
 def rotate_array(nums, k)
   return [] unless nums
+  return nums if k.zero?
 
-  k = n - (k % nums.size)
+  k = k % nums.size
   n = nums.size - 1
 
   reverse(nums, 0, n - k)
