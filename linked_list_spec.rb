@@ -45,4 +45,15 @@ describe ListNode do
       expect(ListNode.rotate_list(head, 2)).to eq [2, 1, 5]
     end
   end
+
+  describe '#remove_dups' do
+    it 'removes dupps from a linked list' do
+      head = ListNode.new(1)
+      head.next = ListNode.new(2)
+      head.next.next = ListNode.new(2)
+      head.next.next.next = ListNode.new(3)
+      head.next.next.next.next = ListNode.new(3)
+      expect(ListNode.remove_dups(head)).to eq [1, 2, 3]
+    end
+  end
 end

@@ -80,4 +80,22 @@ class ListNode
     prev.next = nil
     traverse(dummy)
   end
+
+  def self.remove_dups(head)
+    return unless head
+
+    current = head
+    until current.next.nil?
+      runner = current
+      until runner.next.nil?
+        if runner.val == runner.next.val
+          runner.next = runner.next.next
+        else
+          runner = runner.next
+        end
+      end
+      current = current.next
+    end
+    traverse(head)
+  end
 end
