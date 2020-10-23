@@ -23,6 +23,14 @@ class TreeNode
     depth
   end
 
+  def self.min_depth(root)
+    return 0 unless root
+
+    left = min_depth(root.left)
+    right = min_depth(root.right)
+    (left.zero? || right.zero? ? left + right : [left, right].min) + 1
+  end
+
   def self.inorder_traversal(root)
     return [] unless root
 

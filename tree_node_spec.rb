@@ -32,6 +32,12 @@ describe TreeNode do
     end
   end
 
+  describe '#min_depth' do
+    it 'returns the min depth of the tree' do
+      expect(TreeNode.min_depth(root)).to eq 2
+    end
+  end
+
   describe '#inorder_traversal' do
     it 'traverses tree inorder' do
       expect(TreeNode.inorder_traversal(root)).to match_array([3, 7, 9, 15, 20])
