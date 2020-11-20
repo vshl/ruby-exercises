@@ -11,18 +11,21 @@ describe ListNode do
 
   describe '#traverse' do
     it 'traverses a linked list' do
+      skip
       expect(ListNode.traverse(root)).to match_array([1, 2, 3])
     end
   end
 
   describe '#reverse_list' do
     it 'reverses a linked list' do
+      skip
       expect(ListNode.reverse_list(root)).to eq [3, 2, 1]
     end
   end
 
   describe '#palindrome?' do
     it 'linked list is not palindrome' do
+      # skip
       root = ListNode.new(1)
       root.next = ListNode.new(2)
       root.next.next = ListNode.new(3)
@@ -30,6 +33,7 @@ describe ListNode do
     end
 
     it 'linked list is a palindrome' do
+      # skip
       root = ListNode.new(1)
       root.next = ListNode.new(2)
       root.next.next = ListNode.new(1)
@@ -39,6 +43,7 @@ describe ListNode do
 
   describe '#rotate_list' do
     it 'rotates linked list by a number' do
+      skip
       head = ListNode.new(5)
       head.next = ListNode.new(2)
       head.next.next = ListNode.new(1)
@@ -48,6 +53,7 @@ describe ListNode do
 
   describe '#remove_dups' do
     it 'removes dupps from a linked list' do
+      skip
       head = ListNode.new(1)
       head.next = ListNode.new(2)
       head.next.next = ListNode.new(2)

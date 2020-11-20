@@ -37,29 +37,29 @@ class ListNode
   end
 
   def self.palindrome?(head)
-    slow = head
-    fast = head
-    while fast && fast.next
-      slow = slow.next
-      fast = fast.next.next
-    end
+    reversed = reverse_and_clone(head)
+    is_equal?(head, reversed)
+  end
 
-    prev = nil
-    curr = slow
-    while curr
-      temp = curr.next
-      curr.next = prev
-      prev = curr
-      curr = temp
+  def self.reverse_and_clone(node)
+    head = nil
+    until node.nil?
+      n = ListNode.new(node.val)
+      n.next = head
+      head = n
+      node = node.next
     end
+    head
+  end
 
-    while prev
-      return false if prev.val != head.val
+  def self.is_equal?(one, two)
+    until one.nil? && two.nil?
+      return false unless one.val == two.val
 
-      head = head.next
-      prev = prev.next
+      one = one.next
+      two = two.next
     end
-    true
+    one.nil? && two.nil?
   end
 
   def self.rotate_list(head, k)
